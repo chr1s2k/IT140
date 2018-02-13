@@ -38,3 +38,6 @@ data = file1.read()
 
 # Print out the contents
 print(data)
+
+
+# Reading a text file
