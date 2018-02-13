@@ -93,3 +93,59 @@ file1.close()
 # print out the contents of the file again
 file1= open(filepath, 'r')
 print(file1.read())
+
+
+# Challenge: Writing a text file
+
+# Get the filepath from the command line
+import sys
+I= sys.argv[1] 
+O= sys.argv[2] 
+S= sys.argv[3]
+T= sys.argv[4]
+
+# Your code goes here
+file1 = open(I, 'r')
+data = file1.read()
+newData = re.sub(S, T, data)
+file2 = open(O, 'w')
+file2.write(newData)
+file1.close()
+file2.close()
+
+
+# Fixed length records
+# sample data with records 6 characters long
+data= '   100  1000     1999999   700'
+print(data)
+
+recordLength= 6
+start= 0
+records= []
+
+# use the substring function to read all the records
+while( (len(data) - start) >= recordLength):
+  record= data[start:start + recordLength]
+  records.append(record)
+  start+= recordLength
+
+# print out all of our records
+for i in range(0,len(records)):
+  print('Record '+ str(i) +': ('+records[i]+')')
+
+'''
+   100  1000     1999999   700
+Record 0: (   100)
+Record 1: (  1000)
+Record 2: (     1)
+Record 3: (999999)
+Record 4: (   700)
+'''
+
+
+# The String.strip() Function
+# It removes white space (gaps) from the beginning and end of a string.
+text= '  Words   Other   Words\tTab   '
+print(':' + text + ':')
+text= text.strip()
+print(':' + text + ':')
