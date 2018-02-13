@@ -27,7 +27,6 @@ fileC.close()                          # close the file
 
 
 # Reading a text file
-
 filepath= 'content/textfiles/parrot.txt'
 
 # Open the file in filename for reading
@@ -41,7 +40,6 @@ print(data)
 
 
 # Reading a text file
-
 filepath= 'content/textfiles/parrot.txt'
 
 # Open the file in filename for reading
@@ -52,3 +50,18 @@ data = file1.read()
 
 # Print out the contents
 print(data)
+
+
+# Challenge: Reading a text file
+# Load our command line arguments
+import sys
+P= sys.argv[1]
+S= sys.argv[2]
+
+# Your code goes here
+file1= open(P, 'r').read()
+#data = file1.read()
+
+#count = data.count(S)
+
+print(file1.count(S))
